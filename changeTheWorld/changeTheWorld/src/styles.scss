@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // Define 1 rem
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: 'MuseoModerno', cursive;
+}
+
+  
+:root {
+  --color-1F2324: #1F2324;
+  --color-46494a: #46494a;
+  --color-E4E4E4: #E4E4E4;
+  --color-ED145B: #ED145B;
+  --color-a32a52: #a32a52;
+}
+
