@@ -9,7 +9,7 @@
   <div class="nav-search"></div>
 
   <div class="buttons">
-    <div class="nav-icon__projects" routerLink="/post/add">
+    <div class="nav-icon__projects">
       <svg class="icon__projects">
         <use xlink:href="assets/sprite.svg#projects" />
       </svg>
@@ -37,6 +37,12 @@
       <app-tooltip class="tooltip--disable" [label]="'Notify'" ></app-tooltip>
     </div>
 
-    <div class="nav-icon__user"></div>
+    <div class="nav-icon__user" (click)="showTooltipMenuUser()">
+      <svg class="icon__user">
+        <use xlink:href="assets/sprite.svg#user" />
+      </svg>
+      <app-tooltip *ngIf="!showTooltip" class="tooltip--disable" [label]="'Menu user'" ></app-tooltip>
+      <app-tooltip-menu-user *ngIf="showTooltip" ></app-tooltip-menu-user>
+    </div>
   </div>
 </nav>

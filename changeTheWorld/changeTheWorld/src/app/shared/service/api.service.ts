@@ -19,14 +19,14 @@ export class ApiService {
         return this.httpClient.get(`${this.urlAPI}`).pipe(
             tap({
                 error: error => {
-
+                    console.log("Error");
                 }
             }),
             delay(200),
             map(response => response as PostModel[])
         )
     }
-    
+
     getPost(id: number): Observable<PostModel> {
         return this.httpClient.get(`${this.urlAPI}/${id}`).pipe(
             tap({

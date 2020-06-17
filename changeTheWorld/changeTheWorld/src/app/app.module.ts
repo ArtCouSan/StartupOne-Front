@@ -10,6 +10,9 @@ import { SidebarComponent } from './posts/post-list/sidebar/sidebar.component';
 import { SidebarRightComponent } from './posts/post-list/sidebar-right/sidebar-right.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { TooltipComponent } from './shared/components/tooltip/tooltip.component';
+import { TooltipMenuUserComponent } from './shared/components/tooltip-menu-user/tooltip-menu-user.component';
+import { FormsModule }   from '@angular/forms';
+import { Base64Component } from './shared/components/base64/base64.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,17 @@ import { TooltipComponent } from './shared/components/tooltip/tooltip.component'
     PostDetailsComponent,
     SidebarComponent,
     SidebarRightComponent,
-    TooltipComponent
+    TooltipComponent,
+    TooltipMenuUserComponent,
+    Base64Component
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [Base64Component],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

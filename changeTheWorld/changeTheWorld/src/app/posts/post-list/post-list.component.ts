@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/shared/service/api.service';
+import { PostModel } from 'src/app/shared/model/post.model';
+import { Base64Component } from 'src/app/shared/components/base64/base64.component';
 
 @Component({
   selector: 'app-post-list',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsListComponent implements OnInit {
 
-  constructor() { }
+  posts: PostModel[] = [];
+
+  constructor(private apiPost: ApiService) {
+  }
 
   ngOnInit() {
+    this.listPosts();
+  }
+
+  listPosts() {
+    this.apiPost.listPost().subscribe({
+      next: result => {
+        this.posts = result as PostModel[];
+      }
+    })
   }
 
 }

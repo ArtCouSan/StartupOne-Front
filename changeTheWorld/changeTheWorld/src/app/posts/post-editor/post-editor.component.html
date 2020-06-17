@@ -1,8 +1,30 @@
 <div class="container">
-    <app-navbar class="nav"></app-navbar>
-    <div class="box-inputs">
-        <input type="text" placeholder="Titulo">
-        <textarea type="text" placeholder="Descricao"></textarea>
-        <input type="file" placeholder="Imagem">
+  <app-navbar class="nav"></app-navbar>
+  <div class="box-inputs">
+    <div class="input">
+      <label class="input__label">Title</label>
+      <input type="text" name="title" [(ngModel)]="post.title" placeholder="Title" />
     </div>
+    <div class="input">
+      <label class="input__label">Description</label>
+      <textarea type="text" [(ngModel)]="post.description" placeholder="Description"></textarea>
+    </div>
+    <div class="input">
+      <label class="input__label">Principal image</label>
+      <input type="file" (change)="changeFile($event)" placeholder="Principal image" />
+    </div>
+    <!-- TODO: Completar campos -->
+    <!-- <div class="input">
+      <label class="input__label">Gallery</label>
+      <input type="file" placeholder="Principal image" />
+    </div> -->
+  </div>
+  <div class="box-buttons">
+    <div class="button--save" (click)="savePost()">
+      <svg class="icon__save">
+        <use xlink:href="assets/sprite.svg#save" />
+      </svg>
+      <app-tooltip class="tooltip--disable" [label]="'Save'" ></app-tooltip>
+    </div>
+  </div>
 </div>

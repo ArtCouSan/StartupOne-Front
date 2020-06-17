@@ -1,55 +1,53 @@
 .container {
-    display: grid;
-    grid-template-columns: minmax(20vh, 20vh) minmax(50vh, auto) minmax(
-        10vh,
-        10vh
-      ) minmax(20vh, 20vh);
-    grid-template-rows: 10vh 15vh minmax(45vh, 45vh) 8vh 17vh 40vh;
-  
-    grid-template-areas:
-      "navbar navbar navbar navbar"
-      "side post-title post-title side-right"
-      "side post-principal-photo post-menu-buttons-social side-right"
-      "side post-preview-info post-preview-info side-right"
-      "side post-menu-buttons post-menu-buttons side-right"
-      "side post-description post-description side-right";
-  
-    background: linear-gradient(
-      to right,
-      var(--color-1F2324),
-      var(--color-46494a)
-    );
-  
-    .nav {
-      grid-area: navbar;
-      background-color: var(--color-1F2324);
-      position: fixed;
-      width: 100vw;
-      z-index: 99;
-    }
-  
-    .post-title {
-      grid-area: post-title;
-    }
-  
-    .post-principal-photo {
-      grid-area: post-principal-photo;
-    }
-  
-    .post-preview-info {
-      grid-area: post-preview-info;
-    }
-  
-    .post-menu-buttons-social {
-      grid-area: post-menu-buttons-social;
-    }
-  
-    .post-menu-buttons {
-      grid-area: post-menu-buttons;
-    }
-  
-    .post-description {
-      grid-area: post-description;
-    }
+  display: grid;
+  grid-template-columns:
+    minmax(20vh, 20vh) minmax(50vh, auto) minmax(10vh, 10vh)
+    minmax(20vh, 20vh);
+  grid-template-rows: 10vh 15vh minmax(45vh, 45vh) 8vh 17vh 40vh;
+
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "side post-title post-title side-right"
+    "side post-principal-photo post-menu-buttons-social side-right"
+    "side post-preview-info post-preview-info side-right"
+    "side post-menu-buttons post-menu-buttons side-right"
+    "side post-description post-description side-right";
+
+  background: linear-gradient(
+    to right,
+    var(--color-101010),
+    var(--color-1E2122)
+  );
+
+  .nav {
+    grid-area: navbar;
+    background-color: var(--color-101010);
+    position: fixed;
+    width: 100vw;
+    z-index: 99;
   }
-  
+
+  .post-title {
+    grid-area: post-title;
+  }
+
+  .post-principal-photo {
+    grid-area: post-principal-photo;
+  }
+
+  .post-preview-info {
+    grid-area: post-preview-info;
+  }
+
+  .post-menu-buttons-social {
+    grid-area: post-menu-buttons-social;
+  }
+
+  .post-menu-buttons {
+    grid-area: post-menu-buttons;
+  }
+
+  .post-description {
+    grid-area: post-description;
+  }
+}

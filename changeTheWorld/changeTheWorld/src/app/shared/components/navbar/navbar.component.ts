@@ -12,4 +12,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  showTooltip = false;
+
+  showTooltipMenuUser() {
+    this.showTooltip = !this.showTooltip;
+  }
+
 }
