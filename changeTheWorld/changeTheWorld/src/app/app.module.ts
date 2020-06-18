@@ -13,6 +13,9 @@ import { TooltipComponent } from './shared/components/tooltip/tooltip.component'
 import { TooltipMenuUserComponent } from './shared/components/tooltip-menu-user/tooltip-menu-user.component';
 import { FormsModule }   from '@angular/forms';
 import { Base64Component } from './shared/components/base64/base64.component';
+import { LoaderComponent } from './shared/components/loader/loader.component';
+import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
+import { PostsListsYoursComponent } from './posts/posts-lists-yours/posts-lists-yours.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { Base64Component } from './shared/components/base64/base64.component';
     SidebarRightComponent,
     TooltipComponent,
     TooltipMenuUserComponent,
-    Base64Component
+    Base64Component,
+    LoaderComponent,
+    SnackbarComponent,
+    PostsListsYoursComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,8 @@ export interface PostModel {
     id?: number,
     title?: string,
     description?: string,
-    files?: FileModel[]
+    files?: FileModel[],
+    status?: string
 }
 
 export interface FileModel {

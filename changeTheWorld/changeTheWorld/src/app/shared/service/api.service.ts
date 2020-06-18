@@ -11,7 +11,7 @@ import { PostModel } from '../model/post.model';
 })
 export class ApiService {
 
-    private urlAPI = 'http://localhost:8080/v1/post/';
+    private urlAPI = 'http://localhost:8080/v1/post';
 
     constructor(private httpClient: HttpClient) { }
 

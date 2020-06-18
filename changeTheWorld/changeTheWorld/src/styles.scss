@@ -20,3 +20,31 @@ html {
   --color-E4E4E4: #e4e4e4;
   --color-ED145B: #ed145b;
 }
+
+app-loader {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+app-loader {
+  height: 100vh;
+}
+
+.loader {
+  &--disable {
+    display: none !important;
+  }
+
+  &--active {
+  }
+}
+
+.snackbar {
+  &--disable {
+    display: none !important;
+  }
+
+  &--active {
+  }
+}

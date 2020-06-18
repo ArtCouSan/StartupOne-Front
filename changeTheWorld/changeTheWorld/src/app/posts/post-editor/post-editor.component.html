@@ -1,17 +1,33 @@
 <div class="container">
   <app-navbar class="nav"></app-navbar>
-  <div class="box-inputs">
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="box-inputs"
+  >
     <div class="input">
       <label class="input__label">Title</label>
-      <input type="text" name="title" [(ngModel)]="post.title" placeholder="Title" />
+      <input
+        type="text"
+        name="title"
+        [(ngModel)]="post.title"
+        placeholder="Title"
+      />
     </div>
     <div class="input">
       <label class="input__label">Description</label>
-      <textarea type="text" [(ngModel)]="post.description" placeholder="Description"></textarea>
+      <textarea
+        type="text"
+        [(ngModel)]="post.description"
+        placeholder="Description"
+      ></textarea>
     </div>
     <div class="input">
       <label class="input__label">Principal image</label>
-      <input type="file" (change)="changeFile($event)" placeholder="Principal image" />
+      <input
+        type="file"
+        (change)="changeFile($event)"
+        placeholder="Principal image"
+      />
     </div>
     <!-- TODO: Completar campos -->
     <!-- <div class="input">
@@ -19,12 +35,22 @@
       <input type="file" placeholder="Principal image" />
     </div> -->
   </div>
-  <div class="box-buttons">
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="box-buttons"
+  >
     <div class="button--save" (click)="savePost()">
       <svg class="icon__save">
         <use xlink:href="assets/sprite.svg#save" />
       </svg>
-      <app-tooltip class="tooltip--disable" [label]="'Save'" ></app-tooltip>
+      <app-tooltip class="tooltip--disable" [label]="'Save'"></app-tooltip>
     </div>
   </div>
+  <app-loader
+    [ngClass]="loader == true ? 'loader--active' : 'loader--disable'"
+  ></app-loader>
+  <app-snackbar
+    (callbackClick)="confirmSnack()"
+    [ngClass]="loader == true ? 'loader--active' : 'loader--disable'"
+  ></app-snackbar>
 </div>

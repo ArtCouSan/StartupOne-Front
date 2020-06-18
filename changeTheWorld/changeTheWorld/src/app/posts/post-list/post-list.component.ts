@@ -10,7 +10,8 @@ import { Base64Component } from 'src/app/shared/components/base64/base64.compone
 })
 export class PostsListComponent implements OnInit {
 
-  posts: PostModel[] = [];
+  public posts: PostModel[] = [];
+  public loader: boolean = false;
 
   constructor(private apiPost: ApiService) {
   }
@@ -20,9 +21,11 @@ export class PostsListComponent implements OnInit {
   }
 
   listPosts() {
+    this.loader = true;
     this.apiPost.listPost().subscribe({
       next: result => {
         this.posts = result as PostModel[];
+        this.loader = false;
       }
     })
   }

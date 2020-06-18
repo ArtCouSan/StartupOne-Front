@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostSaveDTO, FileSaveDTO } from 'src/app/shared/dto/post-save.dto';
 import { ApiService } from 'src/app/shared/service/api.service';
 import { Base64Component } from 'src/app/shared/components/base64/base64.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-editor',
@@ -27,13 +28,16 @@ export class PostEditorComponent implements OnInit {
     }
   }
 
+
   // TODO: Remover apos arrumar galeria
   file: File = null;
 
+  public loader: boolean = false;
+  public snackbar: boolean = false;
   public post: PostSaveDTO = this.postEmpty;
   public fileGeneric: FileSaveDTO = this.postFileEmpty;
 
-  constructor(private apiPost: ApiService, private base64Service: Base64Component) { }
+  constructor(private apiPost: ApiService, private base64Service: Base64Component, private router: Router) { }
 
   ngOnInit() {
   }
@@ -56,12 +60,19 @@ export class PostEditorComponent implements OnInit {
   }
 
   savePost() {
+    this.loader = true;
     this.apiPost.savePost(this.post).subscribe({
       next: result => {
-        console.log("Sucess");
+        this.snackbar = true;
       }
     })
+  }
 
+  confirmSnack() {
+    this.router.navigate(['post/add/'])
+    .then(() => {
+      window.location.reload();
+    });
   }
 
 }
