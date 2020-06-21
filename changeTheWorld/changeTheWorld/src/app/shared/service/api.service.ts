@@ -39,6 +39,20 @@ export class ApiService {
         )
     }
 
+    getEmptyDefaultImage(): Observable<File> {
+        return this.httpClient.get(`assets/empty.jpg`, { responseType: 'blob' }).pipe(
+            tap({
+                error: error => {
+
+                }
+            }),
+            delay(200),
+            map(response => {
+                return new File([response], 'empty.jpg', { type: 'image/jpg' });
+            })
+        )
+    }
+
     savePost(post: PostSaveDTO): Observable<PostModel> {
         return this.httpClient.post(`${this.urlAPI}`, post).pipe(
             tap({
@@ -51,8 +65,8 @@ export class ApiService {
         )
     }
 
-    alterPost(post: PostAlterDTO): Observable<PostModel> {
-        return this.httpClient.put(`${this.urlAPI}`, post).pipe(
+    alterPost(id: number, post: PostAlterDTO): Observable<PostModel> {
+        return this.httpClient.put(`${this.urlAPI}/${id}`, post).pipe(
             tap({
                 error: error => {
 

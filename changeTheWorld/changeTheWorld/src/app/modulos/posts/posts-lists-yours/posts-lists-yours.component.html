@@ -21,7 +21,7 @@
             <use xlink:href="assets/sprite.svg#delete" />
           </svg>
         </div>
-        <div class="button">
+        <div class="button" [routerLink]="['/post/edit/', post.id]">
           <svg class="icon__edit">
             <use xlink:href="assets/sprite.svg#edit" />
           </svg>

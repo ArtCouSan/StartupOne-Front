@@ -1,17 +1,16 @@
 .container {
   display: grid;
-  grid-template-columns:
-    minmax(20vh, 20vh) minmax(50vh, auto) minmax(10vh, 10vh)
-    minmax(20vh, 20vh);
-  grid-template-rows: 10vh 15vh minmax(45vh, 45vh) 8vh 17vh 40vh;
+  grid-template-columns: minmax(14vw, 14vw) minmax(70vw, 70vw) minmax(14vw, auto);
+  grid-template-rows: 10vh minmax(50vh, 50vh) 40px 10vh 8vh 17vh 40vh;
 
   grid-template-areas:
-    "navbar navbar navbar navbar"
-    "side post-title post-title side-right"
-    "side post-principal-photo post-menu-buttons-social side-right"
-    "side post-preview-info post-preview-info side-right"
-    "side post-menu-buttons post-menu-buttons side-right"
-    "side post-description post-description side-right";
+    "navbar navbar navbar"
+    "post-principal-photo post-principal-photo post-principal-photo"
+    "side post-menu-buttons-social side-right"
+    "side post-title side-right"
+    "side post-preview-info side-right"
+    "side post-menu-buttons side-right"
+    "side post-description side-right";
 
   background: linear-gradient(
     to right,
@@ -41,6 +40,11 @@
 
   .post-menu-buttons-social {
     grid-area: post-menu-buttons-social;
+    display: flex;
+    align-items: flex-end;
+    height: 40px;
+    justify-content: flex-end;
+    margin-top: 5px;
   }
 
   .post-menu-buttons {

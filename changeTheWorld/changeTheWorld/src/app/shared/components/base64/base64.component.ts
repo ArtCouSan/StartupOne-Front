@@ -13,8 +13,7 @@ export class Base64Component implements OnInit {
   ngOnInit() {
   }
 
-  getData(inputFile: any): Observable<string> {
-    var file: File = inputFile.files[0];
+  getData(file: File): Observable<string> {
     var reader: FileReader = new FileReader();
     return new Observable<string>(observer => {
       reader.onloadend = e => {
@@ -25,9 +24,19 @@ export class Base64Component implements OnInit {
     })
   };
 
-  getName(inputFile: any) {
-    var file: File = inputFile.files[0];
+  getName(file: File) {
     return file.name;
+  }
+
+  convertImageToFile(dataURI, name) {
+    const byteString = window.atob(dataURI);
+    const arrayBuffer = new ArrayBuffer(byteString.length);
+    const int8Array = new Uint8Array(arrayBuffer);
+    for (let i = 0; i < byteString.length; i++) {
+      int8Array[i] = byteString.charCodeAt(i);
+    }
+    const blob = new Blob([int8Array], { type: 'image/png' });
+    return new File([blob], name, { type: 'image/png' });
   }
 
 }

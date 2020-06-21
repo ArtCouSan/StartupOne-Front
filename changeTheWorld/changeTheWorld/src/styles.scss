@@ -48,3 +48,14 @@ app-loader {
   &--active {
   }
 }
+
+
+.tooltip--disable {
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  display: none;
+  animation: cubic-bezier(0.17, 0.67, 0.78, -0.16);
+}

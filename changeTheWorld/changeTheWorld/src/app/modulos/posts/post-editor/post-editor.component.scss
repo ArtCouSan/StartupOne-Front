@@ -1,4 +1,4 @@
-@import "../../shared/theme/grids/posts-editor.scss";
+@import "../../../shared/theme/grids/posts-editor.scss";
 
 .input {
   margin: 20px 0px 20px 0px;
@@ -58,6 +58,33 @@ textarea {
   }
 }
 
+.gallery {
+  .input__label {
+    width: 100% !important;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .box-img {
+    border: 2px solid var(--color-ED145B);
+    margin: 5px;
+    width: 250px;
+    height: 150px;
+
+    img {
+      cursor: pointer;
+      width: 246px;
+      height: 146px;
+    }
+
+    input {
+      display: none;
+    }
+  }
+}
+
 .tooltip--disable {
   &:active,
   &:focus {
@@ -67,4 +94,3 @@ textarea {
   display: none;
   animation: cubic-bezier(0.17, 0.67, 0.78, -0.16);
 }
-

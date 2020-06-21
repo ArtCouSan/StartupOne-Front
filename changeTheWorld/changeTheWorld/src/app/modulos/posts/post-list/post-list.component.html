@@ -19,7 +19,7 @@
         <div class="card-post__description">
           {{ post.description }}
         </div>
-        <div routerLink="/post/details" class="card-post__img-principal">
+        <div [routerLink]="['/post/details', post.id]" class="card-post__img-principal">
           <img
             class="img-principal"
             [src]="post.files[0].data"
@@ -27,10 +27,21 @@
           />
         </div>
         <div class="card-post__buttons">
-          <div class="button__show"></div>
-          <div class="button__share"></div>
-          <div class="button__like"></div>
-          <div class="button__see-later"></div>
+          <div class="button__like">
+            <svg class="icon__like">
+              <use xlink:href="assets/sprite.svg#like" />
+            </svg>
+          </div>
+          <div class="button__later">
+            <svg class="icon__later">
+              <use xlink:href="assets/sprite.svg#folder" />
+            </svg>
+          </div>
+          <div class="button__share">
+            <svg class="icon__label">
+              <use xlink:href="assets/sprite.svg#share" />
+            </svg>
+          </div>
         </div>
       </div>
     </div>

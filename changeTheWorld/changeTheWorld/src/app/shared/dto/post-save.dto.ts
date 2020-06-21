@@ -5,8 +5,10 @@ export interface PostSaveDTO {
 }
 
 export interface FileSaveDTO {
+    id?: number,
     name?: string,
     principal?: boolean,
     position?: number,
-    data?: string
+    data?: string,
+    file?: File
 }

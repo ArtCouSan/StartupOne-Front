@@ -12,10 +12,17 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  showTooltip = false;
+  showTooltipUser = false;
+  showTooltipNotify = false;
 
   showTooltipMenuUser() {
-    this.showTooltip = !this.showTooltip;
+    this.showTooltipUser = !this.showTooltipUser;
+    this.showTooltipNotify = false;
+  }
+
+  showTooltipMenuNotify(){
+    this.showTooltipNotify = !this.showTooltipNotify;
+    this.showTooltipUser = false;
   }
 
 }
