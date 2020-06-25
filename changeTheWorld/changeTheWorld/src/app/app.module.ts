@@ -6,12 +6,10 @@ import { AppComponent } from './app.component';
 import { PostEditorComponent } from './modulos/posts/post-editor/post-editor.component';
 import { PostsListComponent } from './modulos/posts/post-list/post-list.component';
 import { PostDetailsComponent } from './modulos/posts/post-details/post-details.component';
-import { SidebarComponent } from './modulos/posts/post-list/sidebar/sidebar.component';
-import { SidebarRightComponent } from './modulos/posts/post-list/sidebar-right/sidebar-right.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { TooltipComponent } from './shared/components/tooltip/tooltip.component';
 import { TooltipMenuUserComponent } from './shared/components/tooltip-menu-user/tooltip-menu-user.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Base64Component } from './shared/components/base64/base64.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
@@ -27,8 +25,6 @@ import { TooltipNotifyComponent } from './shared/components/tooltip-notify/toolt
     PostsListComponent,
     PostEditorComponent,
     PostDetailsComponent,
-    SidebarComponent,
-    SidebarRightComponent,
     TooltipComponent,
     TooltipMenuUserComponent,
     Base64Component,

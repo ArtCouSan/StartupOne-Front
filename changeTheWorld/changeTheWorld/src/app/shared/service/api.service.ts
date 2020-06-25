@@ -11,7 +11,7 @@ import { PostModel } from '../model/post.model';
 })
 export class ApiService {
 
-    private urlAPI = 'http://localhost:8080/v1/post';
+    private urlAPI = 'http://localhost:8081/v1/post';
 
     constructor(private httpClient: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class ApiService {
         return this.httpClient.get(`${this.urlAPI}`).pipe(
             tap({
                 error: error => {
-                    console.log("Error");
+                    console.log(error);
                 }
             }),
             delay(200),
@@ -31,7 +31,7 @@ export class ApiService {
         return this.httpClient.get(`${this.urlAPI}/${id}`).pipe(
             tap({
                 error: error => {
-
+                    console.log(error);
                 }
             }),
             delay(200),
@@ -43,7 +43,7 @@ export class ApiService {
         return this.httpClient.get(`assets/empty.jpg`, { responseType: 'blob' }).pipe(
             tap({
                 error: error => {
-
+                    console.log(error);
                 }
             }),
             delay(200),
@@ -57,7 +57,7 @@ export class ApiService {
         return this.httpClient.post(`${this.urlAPI}`, post).pipe(
             tap({
                 error: error => {
-
+                    console.log(error);
                 }
             }),
             delay(200),
@@ -69,7 +69,7 @@ export class ApiService {
         return this.httpClient.put(`${this.urlAPI}/${id}`, post).pipe(
             tap({
                 error: error => {
-
+                    console.log(error);
                 }
             }),
             delay(200),
@@ -81,16 +81,12 @@ export class ApiService {
         return this.httpClient.delete(`${this.urlAPI}/${id}`).pipe(
             tap({
                 error: error => {
-
+                    console.log(error);
                 }
             }),
             delay(200),
             map(response => response as PostModel)
         )
-    }
-
-    private getQueryList(): string {
-        return ``;
     }
 
 }

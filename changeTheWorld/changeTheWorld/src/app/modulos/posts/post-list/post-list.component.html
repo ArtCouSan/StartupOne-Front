@@ -1,9 +1,23 @@
 <div class="container">
   <app-navbar class="nav"></app-navbar>
-  <app-sidebar
-    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
-    class="sidebar"
-  ></app-sidebar>
+  <div class="info-user sidebar" [ngClass]="loader == true ? 'loader--disable' : 'loader--active'">
+    <div class="info-user__img">
+      <img class="img-user" src="assets/user-icon.jpg" alt="user icon" />
+    </div>
+    <div class="info-user__welcome">
+      Olá, Fulano
+    </div>
+    <div class="info-user__top-3">
+      <div class="top-3">
+          TOP 3 IDEAS DA SEMANA
+      </div>
+    </div>
+    <div class="info-user__yours-idea">
+      <div class="yours-idea">
+          SUAS IDEIAS
+      </div>
+    </div>
+  </div>
   <section
     [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
     class="section-posts main"
@@ -46,10 +60,6 @@
       </div>
     </div>
   </section>
-  <app-sidebar-right
-    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
-    class="sidebar-right"
-  ></app-sidebar-right>
   <app-loader
     [ngClass]="loader == true ? 'loader--active' : 'loader--disable'"
   ></app-loader>

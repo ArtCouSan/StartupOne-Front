@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsListComponent implements OnInit {
 
-
   contatos: Number[] = [1,2,3,4,2,12,21,,21,21,21,21,21,21,21,21,21,21,12];
 
   constructor() { }
