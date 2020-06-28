@@ -6,6 +6,8 @@
 
 # Docs
 
+http://localhost:8761/
+
 # Passo a passo - Setup
 
 - Clone o projeto
