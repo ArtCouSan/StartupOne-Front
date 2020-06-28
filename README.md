@@ -6,7 +6,7 @@
 
 # Docs
 
-http://localhost:8761/
+http://localhost:4200/
 
 # Passo a passo - Setup
 
